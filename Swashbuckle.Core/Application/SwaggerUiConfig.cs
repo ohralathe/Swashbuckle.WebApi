@@ -33,7 +33,9 @@ namespace Swashbuckle.Application
                 { "%(OAuth2Realm)", "" },
                 { "%(OAuth2AppName)", "" },
                 { "%(OAuth2ScopeSeperator)", " " },
+                { "%(Scopes)", "" },
                 { "%(OAuth2AdditionalQueryStringParams)", "{}" },
+                { "%(usePkceWithAuthorizationCodeGrant)", "false" },
 				{ "%(ApiKeyName)", "api_key" },
 				{ "%(ApiKeyIn)", "query" }
             };
@@ -120,6 +122,8 @@ namespace Swashbuckle.Application
             string realm,
             string appName,
             string scopeSeperator = " ",
+            string scopes = "",
+            bool usePkceWithAuthorizationCodeGrant = false,
             Dictionary<string, string> additionalQueryStringParams = null)
         {
             _templateParams["%(OAuth2Enabled)"] = "true";
@@ -128,6 +132,8 @@ namespace Swashbuckle.Application
             _templateParams["%(OAuth2Realm)"] = realm;
             _templateParams["%(OAuth2AppName)"] = appName;
             _templateParams["%(OAuth2ScopeSeperator)"] = scopeSeperator;
+            _templateParams["%(Scopes)"] = scopes;
+            _templateParams["%(usePkceWithAuthorizationCodeGrant)"] = usePkceWithAuthorizationCodeGrant.ToString();
 
             if (additionalQueryStringParams != null)
                 _templateParams["%(OAuth2AdditionalQueryStringParams)"] = JsonConvert.SerializeObject(additionalQueryStringParams);

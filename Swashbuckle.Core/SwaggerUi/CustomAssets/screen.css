@@ -1492,3 +1492,8 @@
   outline-color: #cc0000;
   background-color: #f2dede;
 }
+
+/* custom color  */
+.swagger-section pre code[class^='language-'] span {
+  color: rgb(1 108 1) !important;
+}

@@ -92,6 +92,8 @@ namespace Swashbuckle.Tests.SwaggerUi
                         "test-realm",
                         "Swagger UI",
                         " ",
+                        "",
+                        false,
                         new Dictionary<string, string> { { "TestHeader", "TestValue" } });
                 });
 
